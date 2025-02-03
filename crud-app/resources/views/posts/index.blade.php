@@ -7,22 +7,23 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f7fa;
-            color: #333;
+            background-color: #f9fafb; /* Lighter background */
+            color: #555; /* Lighter text color */
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #3e8e41;
-            color: white;
+            background-color: #ffffff; /* Light background */
+            color: #333; /* Dark text color for contrast */
             padding: 20px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
         h1 {
             margin: 0;
         }
         a {
-            color: #3e8e41;
+            color: #3e8e41; /* Soft green */
             text-decoration: none;
             font-weight: bold;
         }
@@ -34,26 +35,27 @@
         }
         .create-post {
             display: inline-block;
-            background-color: #3e8e41;
-            color: white;
+            background-color: #f0f9f4; /* Light green background */
+            color: #333; /* Dark text for visibility */
             padding: 10px 20px;
             margin-bottom: 20px;
             border-radius: 5px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Light shadow */
         }
         .create-post:hover {
-            background-color: #2c6c2f;
+            background-color: #e3f2e1; /* Even lighter green */
         }
         ul {
             list-style: none;
             padding: 0;
         }
         li {
-            background-color: white;
+            background-color: white; /* Clean white background */
             margin: 10px 0;
             padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
         .post-actions {
             margin-top: 10px;
@@ -62,7 +64,7 @@
         .post-actions button {
             margin-right: 10px;
             padding: 8px 12px;
-            background-color: #3e8e41;
+            background-color: #4caf50; /* Soft green for actions */
             color: white;
             text-decoration: none;
             border: none;
@@ -71,7 +73,7 @@
         }
         .post-actions a:hover,
         .post-actions button:hover {
-            background-color: #2c6c2f;
+            background-color: #45a049; /* Darker green on hover */
         }
         .alert-success {
             background-color: #d4edda;
@@ -83,18 +85,24 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>All Posts</h1>
     </header>
 
     <div class="container">
+        <!-- Link to Dashboard -->
+        <a href="{{ route('dashboard') }}" class="create-post">Go to Dashboard</a>
+
         <a href="{{ route('posts.create') }}" class="create-post">Create New Post</a>
+
         @if (session('success'))
             <div class="alert-success">
                 <p>{{ session('success') }}</p>
             </div>
         @endif
+
         <ul>
             @foreach ($posts as $post)
                 <li>

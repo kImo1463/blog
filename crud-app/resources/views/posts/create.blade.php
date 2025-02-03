@@ -74,6 +74,8 @@
 </head>
 <body>
     <div class="container">
+    <a href="{{ route('posts.index') }}">Back to All Posts</a>
+
         <div class="card">
             <div class="card-header">
                 Create New Post
